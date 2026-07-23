@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs & TS incremental caches
+dist/
+**/dist/
+*.tsbuildinfo
+.expo/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store

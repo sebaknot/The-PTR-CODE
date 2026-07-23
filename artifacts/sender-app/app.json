@@ -1,0 +1,84 @@
+{
+  "expo": {
+    "name": "Porter",
+    "slug": "sender-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "porter",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0E2A4A"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.porter.deliveryapp",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Porter uses your location to set your pickup point and match you with nearby porters.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Porters share live location during an active delivery so senders can track their package in real time.",
+        "NSCameraUsageDescription": "Porter uses the camera to photograph packages at pickup and drop-off for delivery confirmation.",
+        "NSPhotoLibraryUsageDescription": "Porter lets you attach a photo of your package from your library.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.porter.deliveryapp",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#0E2A4A"
+      },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "READ_MEDIA_IMAGES"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-web-browser",
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Porters share live location during an active delivery so senders can track their package in real time."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Porter lets you attach a photo of your package from your library.",
+          "cameraPermission": "Porter uses the camera to photograph packages at pickup and drop-off for delivery confirmation."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#0E2A4A"
+        }
+      ],
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.porter.deliveryapp",
+          "enableGooglePay": true
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
